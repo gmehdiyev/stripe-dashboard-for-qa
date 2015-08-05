@@ -14,4 +14,4 @@ production:
   stripe_secret_key: ENV['stripe_publishable_key']
   
   
-Built by [Wetravel.to](http://www.wetravel.to)
+[Wetravel.to](http://www.wetravel.to)
