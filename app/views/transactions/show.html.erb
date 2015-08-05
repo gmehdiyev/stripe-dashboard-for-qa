@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Transaction Details</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+        <tr>
+        <% if @transaction.id.start_with?("ch_") %>
+			<td>Id</td>
+			<td>Amount</td>
+			<td>Currency</td>
+			<td>Status</td>
+			<td>Refunded</td>
+			<td>Captured</td>
+			<td>Object</td>
+			<td>Last4</td>
+			<td>Brand</td>
+			<td>Metadata</td>
+		<% else %>
+			<td>Id</td>
+			<td>Amount</td>
+			<td>Currency</td>
+			<td>Status</td>
+			<td>Refunded</td>
+			<td>Captured</td>
+			<td>Object</td>
+			<td>Last4</td>
+			<td>Bank</td>
+			<td>Metadata</td>
+		<% end %>
+      </tr>
+      <tr>
+        <% if @transaction.id.start_with?("ch_") %>
+			<td><%= @transaction.id %> </td>
+			<td><%= @transaction.amount %> </td>
+			<td><%= @transaction.currency %> </td>
+			<td><%= @transaction.status %> </td>
+			<td><%= @transaction.refunded %> </td>
+			<td><%= @transaction.captured %> </td>
+			<td><%= @transaction.source.object %> </td>
+			<td><%= @transaction.source.last4 %> </td>
+			<td><%= @transaction.source.brand %> </td>
+			<td><%= @transaction.metadata %> </td>
+		<% else %>
+			<td><%= @transaction.id %> </td>
+			<td><%= @transaction.amount %> </td>
+			<td><%= @transaction.currency %> </td>
+			<td><%= @transaction.status %> </td>
+			<td><%= @transaction.refunded %> </td>
+			<td><%= @transaction.captured %> </td>
+			<td><%= @transaction.source.object %> </td>
+			<td><%= @transaction.source.last4 %> </td>
+			<td><%= @transaction.source.bank_name %> </td>
+			<td><%= @transaction.metadata %> </td>
+		<% end %>
+      </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Back', transactions_path %>

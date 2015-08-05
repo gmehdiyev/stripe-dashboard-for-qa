@@ -1,0 +1,26 @@
+class TransactionsController < ApplicationController
+  before_action :set_transaction, only: [:show]
+  before_action :authenticate_user!
+
+  # GET /transactions
+  # GET /transactions.json
+  def index
+    @transactions = Stripe::BalanceTransaction.all(:limit => 20)
+  end
+
+  # GET /transactions/1
+  # GET /transactions/1.json
+  def show
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_transaction
+      @transaction = Stripe::Charge.retrieve(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def transaction_params
+      params[:transaction]
+    end
+end
