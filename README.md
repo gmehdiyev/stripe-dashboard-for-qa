@@ -1,4 +1,4 @@
-# stripe-dashboard-for-qa
+# [Wetravel.to](http://www.wetravel.to) WT-stripe-dashboard-for-qa
 This is a small stripe dashboard with minimum information for QA Teams. If youhave a remote QA team you don't want to give access to your stripe dashboard this is great way to go.
 
 # Setup Stripe keys
