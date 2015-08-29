@@ -22,8 +22,7 @@ test/coverage
 /vendor/bundle
 
 #Config
-config/secrets.yml
-
+/config/secrets.yml
 # these should all be checked in to normalise the environment:
 # Gemfile.lock, .ruby-version, .ruby-gemset
 
