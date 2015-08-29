@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Customers</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>created</th>
+      <th>id</th>
+      <th>email</th>
+      <th>description</th>
+      <th>metadata</th>
+      <th>payment method</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= Time.at(customer['created']).to_datetime %></td>
+        <td><%= customer['id'] %></td>
+        <td><%= customer['email'] %></td>
+        <td><%= customer['description'] %></td>
+        <td><%= customer['metadata'] %></td>
+        <% if customer['sources']['data'][0].nil? %>
+        <td>No credit card</td>
+        <% else %>
+        <td><%= customer['sources']['data'][0]['object'] %></td>
+        <td><%= customer['sources']['data'][0]['brand'] %></td>
+        <td><%= customer['sources']['data'][0]['last4'] %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

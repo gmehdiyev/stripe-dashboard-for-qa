@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #root 'welcome#index'
   root :to => 'transactions#index'
   resources :transfers
+  resources :customers
   resources :transactions, :path => "/"
   
 
