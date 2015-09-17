@@ -21,7 +21,7 @@
       <% @transactions.data.each do |transaction| %>
       <tr>
         <td><%= Time.at(transaction['created']).to_datetime %></td>
-        <td><%=  transaction['amount'] %></td>
+        <td><%=  transaction['amount'] / 100 %></td>
         <td><%=  transaction['currency'] %></td>
         <td><%=  transaction['status'] %></td>
         <td><%=  transaction['source'] %></td>
